@@ -22,3 +22,31 @@ function updatePreview(e) {
   // aka the textarea with the id of editor
   preview.innerHTML = e.target.value;
 }
+
+function init() {
+  // Adding some default text to give the user a better
+  // idea of what they can do
+  const defaultText = `
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+
+<p>This let's you see how the page would update <span style="color: blue">if you give the user control of the page.</span></p>
+
+You can even make lists:
+
+<ul>
+  <li>This is the first item</li>
+  <li>This is the second item</li>
+</ul>
+`;
+
+  // Update both the value and innerHTML so that they
+  // are matching and everything stays in sync
+  editor.value = defaultText;
+  preview.innerHTML = defaultText;
+}
+
+window.onload = init;
